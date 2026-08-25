@@ -1,9 +1,7 @@
 import axios from 'axios'
 
-// Cria uma instância do axios já configurada
-// com o endereço base da nossa API
 const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3333',
 })
 
 export default api
