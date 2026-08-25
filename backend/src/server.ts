@@ -9,7 +9,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3333;
 
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}))
+
 app.use(express.json());
 
 // ===== ROTAS =====
