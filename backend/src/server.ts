@@ -26,3 +26,8 @@ app.get('/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Erro não tratado:', reason)
+  process.exit(1)
+})
