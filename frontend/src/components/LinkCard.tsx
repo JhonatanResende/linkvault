@@ -12,10 +12,10 @@ interface LinkCardProps {
 export default function LinkCard({ link, onDelete, onUpdate }: LinkCardProps) {
   const [confirming, setConfirming] = useState(false)
 
-  const handleFavorite = async () => {
-    const updated = await updateLink(link.id, { isFavorite: !link.isFavorite })
-    onUpdate(updated)
-  }
+const handleFavorite = async () => {
+  const updated = await updateLink(link.id, { is_favorite: !link.is_favorite })
+  onUpdate(updated)
+}
 
   const handleDelete = async () => {
     try {
@@ -37,11 +37,11 @@ export default function LinkCard({ link, onDelete, onUpdate }: LinkCardProps) {
         </span>
 
         <button
-          className={`favorite-btn ${link.isFavorite ? 'active' : ''}`}
+          className={`favorite-btn ${link.is_favorite ? 'active' : ''}`}
           onClick={handleFavorite}
-          title={link.isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+          title={link.is_favorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
         >
-          {link.isFavorite ? '★' : '☆'}
+          {link.is_favorite ? '★' : '☆'}
         </button>
       </div>
 
@@ -65,7 +65,7 @@ export default function LinkCard({ link, onDelete, onUpdate }: LinkCardProps) {
 
       <div className="card-footer">
         <span className="card-date">
-          {new Date(link.createdAt).toLocaleDateString('pt-BR')}
+          {new Date(link.created_at).toLocaleDateString('pt-BR')}
         </span>
 
         {/* Se está confirmando, mostra os botões de confirmar/cancelar */}

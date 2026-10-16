@@ -44,8 +44,8 @@ export default function Home() {
       link.description?.toLowerCase().includes(search.toLowerCase()) ||
       link.tags.some(t => t.name.toLowerCase().includes(search.toLowerCase()))
 
-    const matchCategory = !selectedCategory || link.categoryId === selectedCategory
-    const matchFavorite = !onlyFavorites || link.isFavorite
+    const matchCategory = !selectedCategory || link.category.id === selectedCategory
+    const matchFavorite = !onlyFavorites || link.is_favorite
 
     return matchSearch && matchCategory && matchFavorite
   })
@@ -58,7 +58,7 @@ export default function Home() {
   const handleUpdate = (updated: Link) => {
     setLinks(prev => prev.map(l => l.id === updated.id ? updated : l))
     showToast(
-      updated.isFavorite ? '⭐ Adicionado aos favoritos!' : 'Removido dos favoritos',
+      updated.is_favorite ? '⭐ Adicionado aos favoritos!' : 'Removido dos favoritos',
       'info'
     )
   }

@@ -7,7 +7,7 @@ export interface Category {
   id: string
   name: string
   color: string
-  createdAt: string
+  created_at: string
 }
 
 export interface Link {
@@ -15,10 +15,9 @@ export interface Link {
   title: string
   url: string
   description?: string
-  isFavorite: boolean
-  createdAt: string
-  updatedAt: string
-  categoryId: string
+  is_favorite: boolean
+  created_at: string
+  updated_at: string
   category: Category
   tags: Tag[]
 }
@@ -27,8 +26,8 @@ export interface CreateLinkData {
   title: string
   url: string
   description?: string
-  categoryId: string
-  tags: string[]
+  category_id: string
+  tag_names: string[]
 }
 
 export interface CreateCategoryData {

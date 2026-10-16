@@ -41,18 +41,24 @@ export default function AddLink() {
     setTags(prev => prev.filter(t => t !== tag))
   }
 
-  const onSubmit = async (data: CreateLinkData) => {
-    try {
-      setLoading(true)
-      await createLink({ ...data, tags })
-      showToast('Link salvo com sucesso! 🎉', 'success')
-      setTimeout(() => navigate('/'), 1000)
-    } catch {
-      showToast('Erro ao salvar o link. Tente novamente.', 'error')
-    } finally {
-      setLoading(false)
+    const onSubmit = async (data: CreateLinkData) => {
+      try {
+        setLoading(true)
+        await createLink({
+          title: data.title,
+          url: data.url,
+          description: data.description,
+          category_id: data.category_id,
+          tag_names: tags
+        })
+        showToast('Link salvo com sucesso! 🎉', 'success')
+        setTimeout(() => navigate('/'), 1000)
+      } catch {
+        showToast('Erro ao salvar o link. Tente novamente.', 'error')
+      } finally {
+        setLoading(false)
+      }
     }
-  }
 
   return (
     <div className="add-link-page">
@@ -109,15 +115,15 @@ export default function AddLink() {
           <div className="form-group">
             <label>Categoria *</label>
             <select
-              {...register('categoryId', { required: 'Selecione uma categoria' })}
+              {...register('category_id', { required: 'Selecione uma categoria' })}
             >
               <option value="">Selecione uma categoria...</option>
               {categories.map(cat => (
                 <option key={cat.id} value={cat.id}>{cat.name}</option>
               ))}
             </select>
-            {errors.categoryId && (
-              <span className="error">{errors.categoryId.message}</span>
+            {errors.category_id && (
+              <span className="error">{errors.category_id.message}</span>
             )}
           </div>
 
