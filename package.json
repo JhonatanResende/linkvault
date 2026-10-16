@@ -1,9 +1,0 @@
-{
-  "name": "linkvault",
-  "scripts": {
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
-  },
-  "devDependencies": {
-    "concurrently": "^8.x.x"
-  }
-}
