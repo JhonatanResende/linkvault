@@ -21,6 +21,3 @@ __pycache__/
 *.pyc
 venv/
 .venv/
-
-# Editor
-.vscode/
