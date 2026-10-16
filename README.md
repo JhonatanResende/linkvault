@@ -30,25 +30,30 @@ sistema de categorias, tags e favoritos.
 
 ### Pré-requisitos
 
-- Node.js instalado
+- Python 3.11+ instalado
 - PostgreSQL instalado e rodando
 
-### Backend
+### Backend (Django)
 
 ```bash
-cd backend
-npm install
+cd backend-django
+python -m venv venv
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Mac/Linux
+pip install -r requirements.txt
 ```
 
-Cria um arquivo `.env` dentro da pasta `backend` com o conteúdo:
+Cria um arquivo `.env` dentro da pasta `backend-django/` com o conteúdo:
 
 ```env
-DATABASE_URL="postgresql://postgres:SUA_SENHA@localhost:5432/linkvault?schema=public"
+DATABASE_URL=postgresql://postgres:SUA_SENHA@localhost:5432/linkvault
+SECRET_KEY=django-insecure-sua-chave-aqui
+DEBUG=True
 ```
 
 ```bash
-npx prisma migrate dev
-npm run dev
+python manage.py migrate
+python manage.py runserver
 ```
 
 ### Frontend
@@ -64,12 +69,15 @@ Acesse: http://localhost:5173
 ## 📁 Estrutura
 ```
 linkvault/
-├── backend/
-│ ├── prisma/ → Schema e migrations do banco
-│ └── src/
-│ ├── controllers/ → Lógica de cada rota
-│ ├── routes/ → Definição dos endpoints
-│ └── lib/ → Configuração do Prisma
+├── backend-django/
+│ ├── core/ → Configurações do projeto
+│ ├── links/
+│ │ ├── models.py → Tabelas do banco
+│ │ ├── serializers.py → Conversão de dados
+│ │ ├── views.py → Lógica da API
+│ │ └── urls.py → Rotas
+│ ├── manage.py
+│ └── requirements.txt
 │
 └── frontend/
 └── src/
