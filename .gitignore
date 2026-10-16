@@ -18,3 +18,13 @@ frontend/dist/
 # Sistema operacional
 .DS_Store
 Thumbs.db
+
+# Python
+backend-django/venv/
+backend-django/__pycache__/
+backend-django/*.pyc
+backend-django/staticfiles/
+backend-django/.env
+
+# Editor
+.vscode/
