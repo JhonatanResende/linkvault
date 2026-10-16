@@ -3,9 +3,6 @@
 Aplicação full-stack para salvar e organizar links pessoais com 
 sistema de categorias, tags e favoritos.
 
-![GitHub repo size](https://img.shields.io/github/repo-size/JhonatanResende/linkvault)
-![GitHub last commit](https://img.shields.io/github/last-commit/JhonatanResende/linkvault)
-
 ## 🌐 Demo
 
 🔗 [Acesse o LinkVault aqui](https://linkvault-gold-phi.vercel.app)
@@ -21,10 +18,15 @@ sistema de categorias, tags e favoritos.
 
 ## 🛠️ Tecnologias
 
-- **Frontend:** React + TypeScript + Vite
+- **Frontend:** React + TypeScript + Vite + React Router + React Hook Form
 - **Backend:** Python + Django + Django REST Framework
 - **Banco de dados:** PostgreSQL
-- **Deploy:** Vercel + Render + Neon
+
+## ☁️ Deploy
+
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Banco de dados:** Neon
 
 ## 🚀 Como rodar localmente
 
