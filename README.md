@@ -21,9 +21,10 @@ sistema de categorias, tags e favoritos.
 
 ## 🛠️ Tecnologias
 
-- **Frontend:** React + TypeScript + Vite + React Router + React Hook Form
-- **Backend:** Node.js + Express + TypeScript
-- **Banco de dados:** PostgreSQL + Prisma ORM
+- **Frontend:** React + TypeScript + Vite
+- **Backend:** Python + Django + Django REST Framework
+- **Banco de dados:** PostgreSQL
+- **Deploy:** Vercel + Render + Neon
 
 ## 🚀 Como rodar localmente
 
