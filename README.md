@@ -53,6 +53,8 @@ SECRET_KEY=django-insecure-sua-chave-aqui
 DEBUG=True
 ```
 
+Agora rode as migrations e inicie o servidor:
+
 ```bash
 python manage.py migrate
 python manage.py runserver
