@@ -12,9 +12,16 @@ interface LinkCardProps {
 export default function LinkCard({ link, onDelete, onUpdate }: LinkCardProps) {
   const [confirming, setConfirming] = useState(false)
 
-const handleFavorite = async () => {
-  const updated = await updateLink(link.id, { is_favorite: !link.is_favorite })
-  onUpdate(updated)
+  const handleFavorite = async () => {
+    const updated = await updateLink(link.id, {
+      title: link.title,
+      url: link.url,
+      description: link.description,
+      category_id: link.category.id,
+      is_favorite: !link.is_favorite,
+      tag_names: link.tags.map(t => t.name)
+    })
+    onUpdate(updated)
 }
 
   const handleDelete = async () => {
