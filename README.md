@@ -1,6 +1,6 @@
 # 🔐 LinkVault
 
-Aplicação full-stack para salvar e organizar links pessoais com 
+Aplicação fullstack para salvar e organizar links pessoais com 
 sistema de categorias, tags e favoritos.
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/JhonatanResende/linkvault)
